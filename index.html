@@ -13,7 +13,9 @@ h1,h2,h3{font-family:'Fraunces',Georgia,serif;line-height:1.1}
 nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:calc(12px + env(safe-area-inset-top,0px)) 5vw 12px;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 70%,transparent)}
 nav b{font-family:'Fraunces',serif;font-size:1.2rem}nav div{display:flex;gap:18px;font-size:.9rem}
 nav a{color:var(--ink);text-decoration:none;opacity:.8}nav a:hover{opacity:1;color:var(--a)}
-@media(max-width:560px){nav div a:nth-child(n+3){display:none}}
+.mb{display:none;background:var(--card);border:1px solid var(--line);border-radius:12px;width:42px;height:42px;font-size:20px;color:var(--ink);cursor:pointer}
+html{scroll-padding-top:72px}
+@media(max-width:720px){.mb{display:block}nav div{position:absolute;top:100%;left:3vw;right:3vw;flex-direction:column;gap:0;background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:8px;box-shadow:0 20px 50px #0003;opacity:0;pointer-events:none;transform:translateY(-10px);transition:.3s}nav.open div{opacity:1;pointer-events:auto;transform:none}nav div a{padding:14px 18px;font-size:1rem;border-radius:12px;opacity:1}nav div a:active{background:var(--line)}}
 .hero{min-height:100vh;display:grid;place-items:center;text-align:center;padding:110px 6vw 60px;position:relative;overflow:hidden}
 .blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.45;animation:fl 14s ease-in-out infinite alternate}
 .b1{width:420px;height:420px;background:var(--a);top:-100px;left:-100px}.b2{width:380px;height:380px;background:var(--b);bottom:-80px;right:-60px;animation-delay:-5s}.b3{width:260px;height:260px;background:var(--c);top:40%;left:55%;animation-delay:-9s}
@@ -122,9 +124,35 @@ footer{text-align:center;padding:30px;color:var(--mut);font-size:.85rem}
 .hr{height:470px}
 .hero .cue{margin-top:24px}
 @media(max-width:860px){.hero{padding-top:76px}.hr{height:400px}}
+:root{--bg:#f3fbfa;--ink:#0a2530;--mut:#4a6a75;--card:#ffffffcc;--a:#0fb5a6;--b:#2f6bff;--c:#ffb020;--line:#0a253022}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#07151c;--ink:#e8fbff;--mut:#8fb5c0;--card:#0e2530cc;--a:#2dd4bf;--b:#60a5fa;--c:#fbbf24;--line:#ffffff22}}
+:root[data-theme="dark"]{--bg:#07151c;--ink:#e8fbff;--mut:#8fb5c0;--card:#0e2530cc;--a:#2dd4bf;--b:#60a5fa;--c:#fbbf24;--line:#ffffff22}
+.btn{box-shadow:0 10px 30px #0fb5a655}
+.scene{box-shadow:0 30px 80px #2f6bff33}.pc:hover{box-shadow:0 24px 50px #2f6bff33}.fc{box-shadow:0 14px 34px #2f6bff33}
+.ph{box-shadow:0 0 0 2px #444,0 40px 70px #2f6bff66}.lid{box-shadow:inset 0 0 0 2px #50505a,0 -10px 50px #0fb5a655}
+.psc{background:linear-gradient(170deg,#2f6bff,#0fb5a6)}.pb{color:#0a2530}.stats b,.g{-webkit-text-fill-color:transparent}
+:root{color-scheme:light;--bg:#fff;--ink:#111827;--mut:#6b7280;--card:#fff;--a:#2563eb;--b:#1d4ed8;--c:#60a5fa;--line:#e5e7eb}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:light;--bg:#fff;--ink:#111827;--mut:#6b7280;--card:#fff;--a:#2563eb;--b:#1d4ed8;--c:#60a5fa;--line:#e5e7eb}}
+:root[data-theme="dark"]{color-scheme:light;--bg:#fff;--ink:#111827;--mut:#6b7280;--card:#fff;--a:#2563eb;--b:#1d4ed8;--c:#60a5fa;--line:#e5e7eb}
+h1,h2,h3,nav b,.stats b,.mq div,.pc .n,.psc b,.rot,.ct a.big{font-family:'DM Sans',system-ui,sans-serif}h1,h2{letter-spacing:-.03em}
+.blob,#glow{display:none}
+.g{background:none;-webkit-text-fill-color:var(--a);color:var(--a);animation:none}
+.stats b{background:none;-webkit-text-fill-color:var(--ink);color:var(--ink)}
+.btn{background:var(--ink);box-shadow:none}.btn.wa{background:#25d366;box-shadow:none}
+.scene{box-shadow:0 10px 40px #0000001a}.pc:hover{box-shadow:0 14px 36px #0000001a}.fc{box-shadow:0 8px 24px #0000001a}
+.ph{box-shadow:0 0 0 2px #444,0 30px 50px #00000033}.lid{box-shadow:inset 0 0 0 2px #50505a}
+.psc{background:#2563eb}.pb{color:#111827}.fc.big{background:var(--ink)}.road{background-color:#111827}
+nav{background:#ffffffd9}nav div{background:#fff}
+:root{--bg:#d2cf9a;--ink:#26311a;--mut:#5b6338;--card:#ecebc4cc;--a:#3f6212;--b:#4d7c0f;--c:#b7d894;--line:#26311a26}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#d2cf9a;--ink:#26311a;--mut:#5b6338;--card:#ecebc4cc;--a:#3f6212;--b:#4d7c0f;--c:#b7d894;--line:#26311a26}}
+:root[data-theme="dark"]{--bg:#d2cf9a;--ink:#26311a;--mut:#5b6338;--card:#ecebc4cc;--a:#3f6212;--b:#4d7c0f;--c:#b7d894;--line:#26311a26}
+nav{background:#d2cf9acc}nav div{background:#d2cf9a}
+.psc{background:#3f6212}.pb{color:#26311a}.road{background-color:#26311a}
+.pc,.chip,.card,.tag,.oc,.fc,.mq{border-color:#26311a26}
+.scene{box-shadow:0 14px 40px #26311a33}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style></head><body>
-<nav><b>Sreeyuktha P</b><div><a href="#journey">Journey</a><a href="#studio">Studio</a><a href="#services">Services</a><a href="#skills">Skills</a><a href="#work">Projects</a><a href="#contact">Contact</a></div></nav>
+<nav><b>Sreeyuktha P</b><div><a href="#journey">Journey</a><a href="#studio">Studio</a><a href="#services">Services</a><a href="#skills">Skills</a><a href="#work">Projects</a><a href="#contact">Contact</a></div><button class="mb" aria-label="Menu" onclick="this.parentNode.classList.toggle('open')">☰</button></nav>
 
 <header class="hero" id="hero">
 <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
@@ -135,7 +163,7 @@ footer{text-align:center;padding:30px;color:var(--mut);font-size:.85rem}
 <div class="cue">scroll to see my story come alive</div></div>
 <div class="hr"><div class="orb"><span class="oc" style="top:0;left:50%;margin:-17px 0 0 -34px">Flutter</span><span class="oc" style="top:50%;right:0;margin:-17px -30px 0 0">Dart</span><span class="oc" style="bottom:0;left:50%;margin:0 0 -17px -32px">Node.js</span><span class="oc" style="top:50%;left:0;margin:-17px 0 0 -34px">.NET</span><span class="oc" style="top:14%;right:14%">Figma</span></div>
 <div class="ph p1"><div class="notch"></div><div class="psc"><small>HRMS</small><b>Good morning ☀️</b><div class="pb">Punch In</div><div class="row">Leave</div><div class="row">Payslip</div></div></div>
-<div class="ph p2"><div class="notch"></div><div class="psc" style="background:linear-gradient(170deg,#18b7a6,#4b7bd6)"><small>Rental Management</small><b>Occupancy</b><div class="bar2"><i></i></div><div class="row">🏠 Villa 12 · Paid</div><div class="row">🏢 Flat 4B · Due soon</div><div class="row">🔑 New lease</div></div></div>
+<div class="ph p2"><div class="notch"></div><div class="psc" style="background:#26311a"><small>Rental Management</small><b>Occupancy</b><div class="bar2"><i></i></div><div class="row">🏠 Villa 12 · Paid</div><div class="row">🏢 Flat 4B · Due soon</div><div class="row">🔑 New lease</div></div></div>
 <div class="fc" style="left:0;bottom:14%">✅ Attendance marked</div><div class="fc big" style="right:2%;bottom:6%;animation-delay:-2s">15+ apps shipped</div><div class="fc t" style="left:18%;top:2%;animation-delay:-3s">$ flutter run ▶</div></div></div>
 </header>
 
@@ -195,12 +223,12 @@ footer{text-align:center;padding:30px;color:var(--mut);font-size:.85rem}
 
 <script>
 const S=[
-{y:'2019 – 2021',t:'Where it all began',o:'Higher Secondary · SPBHSS Ramanattukara',d:'Computer Science class, a school bag and a lot of curiosity about how apps are made.',sky:'#ffd9bd,#fff1e2',dr:'#ff7aa8',sc:.5,sun:'62%',p:['bag','pig']},
-{y:'2021 – 2024',t:'Learning the craft',o:'BSc Computer Science · EMEA College',d:'Books, code and late-night experiments. This is where Dart and Flutter first clicked.',sky:'#ffe7c2,#fff6e6',dr:'#b48cff',sc:.65,sun:'48%',p:['books','long']},
-{y:'06/2024 – 11/2024',t:'First real project',o:'Flutter Developer Intern · Maitexa Technologies',d:'Provider state management, API integration and responsive UI. First laptop, first deadlines.',sky:'#cfe8ff,#f1f8ff',dr:'#6bc4ff',sc:.78,sun:'36%',p:['lap','long']},
-{y:'12/2024 – 05/2025',t:'Building the backend too',o:'Jr. Software Developer · Ferax Technologies',d:'Designed UIs, learned .NET, built my own APIs and wired them into Flutter apps for CRM modules and an e-commerce app.',sky:'#c8f0e4,#f0fff9',dr:'#3fcfa0',sc:.88,sun:'26%',p:['lap','code','long']},
-{y:'10/2025 – 01/2026',t:'Full-stack, part-time',o:'Trilia Solutions · Kernalscape',d:'Flutter on the front and Node.js on the back at Kernalscape, plus web and mobile apps with Provider at Trilia, alongside my main work.',sky:'#e3d4ff,#faf5ff',dr:'#7b4bd6',sc:.95,sun:'16%',p:['lap','code','long','phone']},
-{y:'Now',t:'Shipping at scale',o:'Jr. Software Engineer · Bluesky Technologies',d:'Building rental management and HRMS apps in Flutter, working closely with backend teams and crafting clean UI for real users.',sky:'#ffc7dc,#ffe9b8',dr:'#e8467c',sc:1,sun:'8%',p:['lap','code','long','phone','spark']}];
+{y:'2019 – 2021',t:'Where it all began',o:'Higher Secondary · SPBHSS Ramanattukara',d:'Computer Science class, a school bag and a lot of curiosity about how apps are made.',sky:'#b7d894,#e9efc3',dr:'#8fb55a',sc:.5,sun:'62%',p:['bag','pig']},
+{y:'2021 – 2024',t:'Learning the craft',o:'BSc Computer Science · EMEA College',d:'Books, code and late-night experiments. This is where Dart and Flutter first clicked.',sky:'#c4dd9c,#eef0cc',dr:'#4d7c0f',sc:.65,sun:'48%',p:['books','long']},
+{y:'06/2024 – 11/2024',t:'First real project',o:'Flutter Developer Intern · Maitexa Technologies',d:'Provider state management, API integration and responsive UI. First laptop, first deadlines.',sky:'#d2cf9a,#f0efd2',dr:'#c9a24b',sc:.78,sun:'36%',p:['lap','long']},
+{y:'12/2024 – 05/2025',t:'Building the backend too',o:'Jr. Software Developer · Ferax Technologies',d:'Designed UIs, learned .NET, built my own APIs and wired them into Flutter apps for CRM modules and an e-commerce app.',sky:'#b7d894,#f1f3d4',dr:'#3f6212',sc:.88,sun:'26%',p:['lap','code','long']},
+{y:'10/2025 – 01/2026',t:'Full-stack, part-time',o:'Trilia Solutions · Kernalscape',d:'Flutter on the front and Node.js on the back at Kernalscape, plus web and mobile apps with Provider at Trilia, alongside my main work.',sky:'#dfe3a8,#f6f4d9',dr:'#6b8e23',sc:.95,sun:'16%',p:['lap','code','long','phone']},
+{y:'Now',t:'Shipping at scale',o:'Jr. Software Engineer · Bluesky Technologies',d:'Building rental management and HRMS apps in Flutter, working closely with backend teams and crafting clean UI for real users.',sky:'#e8d9a0,#f7efd0',dr:'#2f3b1d',sc:1,sun:'8%',p:['lap','code','long','phone','spark']}];
 const $=id=>document.getElementById(id),ALL=['long','bag','pig','books','lap','code','phone','spark'];
 $('dots').innerHTML=S.map(()=>'<i></i>').join('');
 const gl=$('gl');['{ }','</>','Dart','API','() =>','Widget','Node'].forEach((t,i)=>{const e=document.createElement('span');e.className='glyph';e.textContent=t;e.style.cssText=`left:${8+i*13}%;bottom:${12+(i%3)*8}%;font-size:${14+i%3*4}px;animation-duration:${9+i}s;animation-delay:${-i*2}s`;gl.appendChild(e)});
@@ -221,6 +249,7 @@ const io=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.cla
 document.querySelectorAll('.rv').forEach(e=>io.observe(e));
 const RW=['Flutter apps','rental management systems','HRMS platforms','Node.js & .NET APIs','pixel-perfect UIs'];let ri=0,rc=0,rd=1;
 (function rw(){const w=RW[ri];rc+=rd;$('rt').textContent=w.slice(0,rc);let d=rd>0?70:35;if(rc===w.length&&rd>0){rd=-1;d=1400}else if(rc===0){rd=1;ri=(ri+1)%RW.length;d=300}setTimeout(rw,d)})();
+document.querySelectorAll('nav div a').forEach(a=>a.addEventListener('click',()=>a.closest('nav').classList.remove('open')));
 const WA='917306297546';
 function wl(){const n=$('wn').value.trim(),m=$('wm').value.trim();$('wsend').href='https://wa.me/'+WA+'?text='+encodeURIComponent('Hi Sreeyuktha, '+(n?'I’m '+n+'. ':'')+(m||'I saw your portfolio and would love to connect.'))}
 ['wn','wm'].forEach(k=>$(k).addEventListener('input',wl));wl();
