@@ -150,6 +150,25 @@ nav{background:#d2cf9acc}nav div{background:#d2cf9a}
 .psc{background:#3f6212}.pb{color:#26311a}.road{background-color:#26311a}
 .pc,.chip,.card,.tag,.oc,.fc,.mq{border-color:#26311a26}
 .scene{box-shadow:0 14px 40px #26311a33}
+#scoot{position:absolute;left:6%;bottom:46px;width:min(56%,340px);overflow:visible}
+.world{position:absolute;left:0;top:0;bottom:0;width:600%;transition:transform .15s linear}
+.far{position:absolute;left:0;right:0;bottom:70px;height:90px;background:radial-gradient(70px 60px at 40px 100%,#26311a1f 98%,#0000) 0 0/140px 90px repeat-x}
+.shop{position:absolute;bottom:70px;width:clamp(90px,12vw,140px);height:clamp(90px,13vw,130px);background:var(--c);border-radius:8px 8px 0 0;box-shadow:inset 0 -14px #0002}
+.shop:before{content:"";position:absolute;left:-8px;right:-8px;top:-14px;height:16px;background:#26311a;border-radius:6px 6px 0 0}
+.shop:after{content:"";position:absolute;left:50%;bottom:0;width:26%;height:44%;margin-left:-13%;background:#26311a;border-radius:6px 6px 0 0}
+.shop b{position:absolute;top:12px;left:0;right:0;text-align:center;font-size:.78rem;color:#26311a;line-height:1.2;padding:0 4px}
+.wh{transform-box:fill-box;transform-origin:center}.walk .wh{animation:spin .45s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.walk #sbody{animation:rb .3s ease-in-out infinite alternate}@keyframes rb{to{transform:translateY(-3px)}}
+.pt{transform-box:fill-box;transform-origin:right center;animation:ptl 1s ease-in-out infinite alternate}@keyframes ptl{to{transform:rotate(12deg)}}
+.bx{opacity:0;transform-box:fill-box;transform-origin:center}.bx.on{opacity:1;animation:drop 1s cubic-bezier(.2,.8,.3,1)}
+@keyframes drop{0%{transform:translate(170px,-40px) rotate(-30deg) scale(.6)}55%{transform:translate(60px,-90px) rotate(12deg) scale(1.15)}78%{transform:translate(0,-8px)}100%{transform:none}}
+.shelf{display:flex;gap:10px;align-items:flex-end;overflow-x:auto;overflow-y:hidden;padding:48px 4px 0;border-bottom:8px solid var(--a)}
+.sp{flex:0 0 clamp(70px,11vw,120px);height:clamp(280px,44vh,420px);border:0;border-radius:8px 8px 0 0;cursor:pointer;writing-mode:vertical-rl;font:700 clamp(1.4rem,3vw,2.4rem)/1 'DM Sans',sans-serif;letter-spacing:-.02em;padding:22px 0;text-align:left;background:var(--bg2);color:var(--tc);transition:transform .6s cubic-bezier(.2,1.5,.4,1),flex-basis .6s}
+.sp:hover,.sp.on{transform:translateY(-28px)}.sp.on{flex-basis:clamp(130px,18vw,210px)}
+.sp.x{background:none!important;border:1.5px dashed var(--mut);color:var(--mut)}
+.dt{display:grid;grid-template-columns:1fr 1fr;gap:5vw;padding:6vh 0 0;min-height:260px}.dt h3{font-size:clamp(2.4rem,7vw,5.5rem);line-height:1}.dt p{color:var(--mut);font-size:1.1rem}.dt .tg{margin-top:16px;color:var(--a);font-weight:700}
+.dt>*{animation:up2 .8s cubic-bezier(.2,.9,.2,1)}@keyframes up2{from{opacity:0;transform:translateY(24px)}}
+@media(max-width:700px){.dt{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style></head><body>
 <nav><b>Sreeyuktha P</b><div><a href="#journey">Journey</a><a href="#studio">Studio</a><a href="#services">Services</a><a href="#skills">Skills</a><a href="#work">Projects</a><a href="#contact">Contact</a></div><button class="mb" aria-label="Menu" onclick="this.parentNode.classList.toggle('open')">☰</button></nav>
@@ -159,7 +178,7 @@ nav{background:#d2cf9acc}nav div{background:#d2cf9a}
 <div class="hw"><div class="hl"><span class="tag">✨ Open to Flutter &amp; full-stack roles</span>
 <h1>Hi, I’m<br><span class="g">Sreeyuktha P</span></h1>
 <div class="rot">I build <span id="rt"></span></div><p>Flutter developer from Calicut with 15+ apps shipped across Android and iOS — from the Figma screen to the API behind it, in Dart, Node.js and .NET.</p>
-<a class="btn" href="#journey">Watch me grow ↓</a><a class="btn wa" href="https://wa.me/917306297546?text=Hi%20Sreeyuktha%2C%20I%20saw%20your%20portfolio" target="_blank" rel="noopener" style="margin-left:8px">Chat on WhatsApp 💬</a>
+<a class="btn" href="#journey">Follow my ride ↓</a><a class="btn wa" href="https://wa.me/917306297546?text=Hi%20Sreeyuktha%2C%20I%20saw%20your%20portfolio" target="_blank" rel="noopener" style="margin-left:8px">Chat on WhatsApp 💬</a>
 <div class="cue">scroll to see my story come alive</div></div>
 <div class="hr"><div class="orb"><span class="oc" style="top:0;left:50%;margin:-17px 0 0 -34px">Flutter</span><span class="oc" style="top:50%;right:0;margin:-17px -30px 0 0">Dart</span><span class="oc" style="bottom:0;left:50%;margin:0 0 -17px -32px">Node.js</span><span class="oc" style="top:50%;left:0;margin:-17px 0 0 -34px">.NET</span><span class="oc" style="top:14%;right:14%">Figma</span></div>
 <div class="ph p1"><div class="notch"></div><div class="psc"><small>HRMS</small><b>Good morning ☀️</b><div class="pb">Punch In</div><div class="row">Leave</div><div class="row">Payslip</div></div></div>
@@ -170,26 +189,11 @@ nav{background:#d2cf9acc}nav div{background:#d2cf9a}
 <div id="journey"><div id="j"><div class="st">
 <div class="scene" id="scene">
 <div class="sun" id="sun"></div><div class="cloud" style="top:14%"></div><div class="cloud" style="top:30%;animation-delay:-20s;transform:scale(.7)"></div>
-<div id="gl"></div><div class="road" id="road"></div>
-<svg id="girl" viewBox="0 0 200 300"><g id="wrap"><g id="body">
-<g id="long"><path d="M72 82Q56 150 76 178L90 100Z" fill="#2b1633"/><path d="M128 82Q144 150 124 178L110 100Z" fill="#2b1633"/></g>
-<g id="bag"><rect x="116" y="124" width="30" height="50" rx="9" fill="#ff7a59"/><rect x="122" y="140" width="18" height="12" rx="4" fill="#ffb199"/></g>
-<g class="leg l"><rect x="88" y="205" width="13" height="74" rx="6" fill="#3b2a5a"/><ellipse cx="94" cy="281" rx="13" ry="5.5" fill="#1e1226"/></g>
-<g class="leg r"><rect x="99" y="205" width="13" height="74" rx="6" fill="#3b2a5a"/><ellipse cx="108" cy="281" rx="13" ry="5.5" fill="#1e1226"/></g>
-<path id="dress" d="M80 118Q100 108 120 118L134 214Q100 224 66 214Z" fill="#ff7aa8"/>
-<rect x="94" y="100" width="12" height="16" rx="5" fill="#f0c3a0"/>
-<circle cx="100" cy="82" r="26" fill="#f6cfae"/>
-<path d="M72 86Q68 50 100 48Q134 50 128 86Q120 64 100 64Q80 64 72 86Z" fill="#2b1633"/>
-<g id="pig"><circle cx="66" cy="94" r="10" fill="#2b1633"/><circle cx="134" cy="94" r="10" fill="#2b1633"/><circle cx="66" cy="82" r="4" fill="#ff5c93"/><circle cx="134" cy="82" r="4" fill="#ff5c93"/></g>
-<circle cx="90" cy="84" r="3" fill="#2a1838"/><circle cx="110" cy="84" r="3" fill="#2a1838"/><circle cx="84" cy="92" r="4" fill="#ff9aa8" opacity=".6"/><circle cx="116" cy="92" r="4" fill="#ff9aa8" opacity=".6"/>
-<path d="M92 94Q100 102 108 94" stroke="#c4455f" stroke-width="2.6" fill="none" stroke-linecap="round"/>
-<path d="M84 124Q70 150 82 172" stroke="#f0c3a0" stroke-width="11" fill="none" stroke-linecap="round"/><path d="M116 124Q130 150 118 172" stroke="#f0c3a0" stroke-width="11" fill="none" stroke-linecap="round"/>
-<g id="books"><rect x="76" y="166" width="48" height="10" rx="2" fill="#7b4bd6"/><rect x="79" y="156" width="42" height="10" rx="2" fill="#e8467c"/><rect x="82" y="147" width="36" height="9" rx="2" fill="#ff9a62"/></g>
-<g id="lap"><path d="M68 174L132 174L124 180L76 180Z" fill="#8c8798"/><rect x="74" y="140" width="52" height="34" rx="4" fill="#1e1b2e"/></g>
-<g id="code"><rect x="80" y="147" width="22" height="3" rx="1.5" fill="#ff7aa8"/><rect x="84" y="154" width="30" height="3" rx="1.5" fill="#6be3c0"/><rect x="84" y="161" width="18" height="3" rx="1.5" fill="#ffd47a"/><rect x="80" y="167" width="26" height="3" rx="1.5" fill="#8fb4ff"/></g>
-<g id="phone"><rect x="138" y="128" width="20" height="36" rx="5" fill="#1e1b2e" stroke="#7b4bd6" stroke-width="2"/><path d="M148 136l7 5-7 5-3-2 4-3-4-3z" fill="#6be3ff"/></g>
-<g id="spark"><path class="spark" d="M44 60l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" fill="#ffd47a"/><path class="spark" style="animation-delay:.5s" d="M160 40l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#fff"/></g>
-</g></g></svg>
+<div class="far" id="far"></div><div class="world" id="world"></div><div class="road" id="road"></div>
+<svg id="scoot" viewBox="0 0 320 200"><g class="wh"><circle cx="62" cy="160" r="22" fill="#ecebc4" stroke="#26311a" stroke-width="9"/><path d="M62 142v36M44 160h36M49 147l26 26M75 147l-26 26" stroke="#26311a" stroke-width="3"/></g><g class="wh"><circle cx="236" cy="160" r="22" fill="#ecebc4" stroke="#26311a" stroke-width="9"/><path d="M236 142v36M218 160h36M223 147l26 26M249 147l-26 26" stroke="#26311a" stroke-width="3"/></g>
+<g id="sbody"><path d="M28 150C28 112 60 98 104 100L158 102L172 150Z" fill="#3f6212"/><rect x="150" y="138" width="76" height="12" rx="6" fill="#26311a"/><path d="M212 150L224 84L244 84L240 150Z" fill="#3f6212"/><path d="M206 138Q236 114 262 138" stroke="#3f6212" stroke-width="8" fill="none" stroke-linecap="round"/><path d="M232 84L222 62" stroke="#26311a" stroke-width="6" stroke-linecap="round"/><circle cx="248" cy="94" r="7" fill="#ffd47a"/><rect x="66" y="88" width="88" height="14" rx="7" fill="#26311a"/>
+<path d="M108 92Q168 96 168 134" stroke="#2f3b1d" stroke-width="13" fill="none" stroke-linecap="round"/><ellipse cx="176" cy="136" rx="11" ry="5" fill="#1a2210"/><path d="M96 92C92 58 114 46 128 52C142 60 140 84 134 92Z" fill="#8fb55a"/><path d="M130 62Q180 72 222 64" stroke="#f0c3a0" stroke-width="9" fill="none" stroke-linecap="round"/><circle cx="138" cy="40" r="16" fill="#f6cfae"/><path d="M122 38Q124 20 142 22Q156 26 154 42Q144 30 132 34Z" fill="#2b1633"/><path class="pt" d="M124 36Q104 36 98 56Q112 48 126 46Z" fill="#2b1633"/><circle cx="146" cy="40" r="2.2" fill="#2a1838"/><path d="M142 47Q147 51 152 46" stroke="#c4455f" stroke-width="2" fill="none" stroke-linecap="round"/>
+<path d="M246 84h54v34h-54z" fill="#8a6a2a"/><g id="boxes"></g><path d="M246 84h54v34h-54zM258 84v34M270 84v34M282 84v34M246 96h54M246 108h54" fill="#c9a24b44" stroke="#6b4f1a" stroke-width="1.6"/></g></svg>
 </div>
 <div><div class="card" id="card"></div><div class="dots" id="dots"></div></div>
 </div></div></div>
@@ -207,13 +211,7 @@ nav{background:#d2cf9acc}nav div{background:#d2cf9a}
 <section class="s" id="skills"><h2 class="rv">Toolbox</h2><p class="sub rv">What I reach for to turn ideas into shipped apps.</p>
 <div class="chips rv"><span class="chip">Dart</span><span class="chip">Flutter</span><span class="chip">Provider</span><span class="chip">API integration</span><span class="chip">Node.js</span><span class="chip">ASP.NET</span><span class="chip">Python · Django</span><span class="chip">Figma</span><span class="chip">Canva</span><span class="chip">Git</span><span class="chip">Time management</span></div></section>
 
-<section class="s" id="work"><h2 class="rv">Things I’ve built</h2><p class="sub rv">15+ apps shipped across Android and iOS. Here are a few favourites.</p>
-<div class="grid">
-<div class="pc rv"><div class="n">01</div><h3>Udyogi</h3><p>Home-service app for Android plus an admin web app: worker booking, ratings &amp; reviews and location-based service matching, with Provider state management.</p><small>Flutter · Web · APIs</small></div>
-<div class="pc rv"><div class="n">02</div><h3>HRMS</h3><p>Attendance punching, leave, flight ticket requests, resignations, salary slips and salary advance, with APIs that automate expense calculation and leave encashment.</p><small>Flutter · ERP · Automation</small></div>
-<div class="pc rv"><div class="n">03</div><h3>GJTW</h3><p>A church community app: attendance, prayer requests, follow-ups, events, matrimony, meetings and location-based features, tuned for smooth daily use.</p><small>Flutter · Community · Performance</small></div>
-<div class="pc rv"><div class="n">04</div><h3>Rental Management</h3><p>A rental management app that keeps properties, tenants and payments organised in one place.</p><small>Flutter · Property · Payments</small></div>
-</div></section>
+<section class="s" id="work"><h2 class="rv">Things I’ve built</h2><p class="sub rv">15+ apps shipped across Android and iOS. Pull a few favourites off the shelf.</p><div class="shelf rv" id="shelf"></div><div class="dt" id="dt"></div></section>
 
 <section class="s ct" id="contact"><h2 class="rv">Let’s build something <span class="g">lovely</span></h2><p class="sub rv" style="margin:0 auto 20px">Open to Flutter, mobile and full-stack opportunities. Message me directly on WhatsApp.</p>
 <div class="wf rv"><input id="wn" placeholder="Your name"><textarea id="wm" rows="3" placeholder="Tell me about your project…"></textarea><a class="btn wa" id="wsend" href="#" target="_blank" rel="noopener">Chat on WhatsApp 💬</a></div>
@@ -223,28 +221,28 @@ nav{background:#d2cf9acc}nav div{background:#d2cf9a}
 
 <script>
 const S=[
-{y:'2019 – 2021',t:'Where it all began',o:'Higher Secondary · SPBHSS Ramanattukara',d:'Computer Science class, a school bag and a lot of curiosity about how apps are made.',sky:'#b7d894,#e9efc3',dr:'#8fb55a',sc:.5,sun:'62%',p:['bag','pig']},
-{y:'2021 – 2024',t:'Learning the craft',o:'BSc Computer Science · EMEA College',d:'Books, code and late-night experiments. This is where Dart and Flutter first clicked.',sky:'#c4dd9c,#eef0cc',dr:'#4d7c0f',sc:.65,sun:'48%',p:['books','long']},
-{y:'06/2024 – 11/2024',t:'First real project',o:'Flutter Developer Intern · Maitexa Technologies',d:'Provider state management, API integration and responsive UI. First laptop, first deadlines.',sky:'#d2cf9a,#f0efd2',dr:'#c9a24b',sc:.78,sun:'36%',p:['lap','long']},
-{y:'12/2024 – 05/2025',t:'Building the backend too',o:'Jr. Software Developer · Ferax Technologies',d:'Designed UIs, learned .NET, built my own APIs and wired them into Flutter apps for CRM modules and an e-commerce app.',sky:'#b7d894,#f1f3d4',dr:'#3f6212',sc:.88,sun:'26%',p:['lap','code','long']},
-{y:'10/2025 – 01/2026',t:'Full-stack, part-time',o:'Trilia Solutions · Kernalscape',d:'Flutter on the front and Node.js on the back at Kernalscape, plus web and mobile apps with Provider at Trilia, alongside my main work.',sky:'#dfe3a8,#f6f4d9',dr:'#6b8e23',sc:.95,sun:'16%',p:['lap','code','long','phone']},
-{y:'Now',t:'Shipping at scale',o:'Jr. Software Engineer · Bluesky Technologies',d:'Building rental management and HRMS apps in Flutter, working closely with backend teams and crafting clean UI for real users.',sky:'#e8d9a0,#f7efd0',dr:'#2f3b1d',sc:1,sun:'8%',p:['lap','code','long','phone','spark']}];
-const $=id=>document.getElementById(id),ALL=['long','bag','pig','books','lap','code','phone','spark'];
+{y:'2019 – 2024',t:'The starting line',o:'SPBHSS Ramanattukara · EMEA College',d:'Higher secondary and a BSc in Computer Science, where Dart and Flutter first clicked. The ride starts here with an empty basket.',n:'College',c:'#b7d894',sky:'#b7d894,#e9efc3',sun:'62%'},
+{y:'06/2024 – 11/2024',t:'Stop 1 · First real project',o:'Flutter Developer Intern · Maitexa Technologies',d:'Provider state management, API integration and responsive UI. The first parcel goes in the basket.',n:'Maitexa',c:'#ecebc4',sky:'#c4dd9c,#eef0cc',sun:'50%'},
+{y:'12/2024 – 05/2025',t:'Stop 2 · Building the backend too',o:'Jr. Software Developer · Ferax Technologies',d:'Designed UIs, learned .NET, built my own APIs and wired them into Flutter apps for CRM modules and an e-commerce app.',n:'Ferax',c:'#c9a24b',sky:'#d2cf9a,#f0efd2',sun:'40%'},
+{y:'10/2025 – 01/2026',t:'Stop 3 · Part-time, full of features',o:'Flutter Developer · Trilia Solutions',d:'Collaborated with UI and backend teams on mobile and web apps, using Provider for scalable state management.',n:'Trilia',c:'#8fb55a',sky:'#b7d894,#f1f3d4',sun:'30%'},
+{y:'Part-time',t:'Stop 4 · Full-stack',o:'Flutter + Node.js Developer · Kernalscape',d:'Flutter on the front end and Node.js on the back end, covering the whole stack of the product.',n:'Kernalscape',c:'#d9c27a',sky:'#dfe3a8,#f6f4d9',sun:'20%'},
+{y:'Now',t:'Stop 5 · Shipping at scale',o:'Jr. Software Engineer · Bluesky Technologies',d:'Building rental management and HRMS apps in Flutter, working with backend teams and crafting clean UI. The basket is full and the road goes on.',n:'Bluesky',c:'#6b8e23',sky:'#e8d9a0,#f7efd0',sun:'10%'}];
+const $=id=>document.getElementById(id);
 $('dots').innerHTML=S.map(()=>'<i></i>').join('');
-const gl=$('gl');['{ }','</>','Dart','API','() =>','Widget','Node'].forEach((t,i)=>{const e=document.createElement('span');e.className='glyph';e.textContent=t;e.style.cssText=`left:${8+i*13}%;bottom:${12+(i%3)*8}%;font-size:${14+i%3*4}px;animation-duration:${9+i}s;animation-delay:${-i*2}s`;gl.appendChild(e)});
-let cur=-1;
-function apply(i){const s=S[i];ALL.forEach(k=>$(k).classList.toggle('hide',!s.p.includes(k)));
-$('wrap').style.transform=`scale(${s.sc})`;$('dress').setAttribute('fill',s.dr);
-const [a,b]=s.sky.split(',');$('scene').style.background=`linear-gradient(${a},${b})`;$('sun').style.top=s.sun;$('sun').style.left=(10+i*14)+'%';
+$('world').innerHTML=S.map((s,i)=>`<div class="shop" style="left:${(i+.8)/6*100}%;--c:${s.c}"><b>${s.n}</b></div>`).join('');
+const BP=[[249,103],[270,103],[259,88],[280,88],[270,73]],BC=['#ecebc4','#c9a24b','#8fb55a','#d9c27a','#b7d894'];
+$('boxes').innerHTML=S.slice(1).map((s,k)=>`<g style="transform:translate(${BP[k][0]}px,${BP[k][1]}px)"><g class="bx"><rect width="19" height="15" rx="2.5" fill="${BC[k]}" stroke="#26311a" stroke-width="1.2"/><path d="M9.5 0v15" stroke="#26311a55"/><text x="9.5" y="11" text-anchor="middle" font-size="8" font-weight="700" fill="#26311a">${s.n[0]}</text></g></g>`).join('');
+let cur=-1,wt;
+function apply(i){const s=S[i],[a,b]=s.sky.split(',');
+$('scene').style.background=`linear-gradient(${a},${b})`;$('sun').style.top=s.sun;$('sun').style.left=(10+i*14)+'%';
 const c=$('card');c.classList.remove('in');void c.offsetWidth;c.innerHTML=`<div class="y">${s.y}</div><h3>${s.t}</h3><div class="o">${s.o}</div><p>${s.d}</p>`;c.classList.add('in');
 document.querySelectorAll('#dots i').forEach((d,k)=>d.classList.toggle('on',k===i));
-gl.style.opacity=.3+i*.14}
-let wt;
+document.querySelectorAll('.bx').forEach((x,k)=>x.classList.toggle('on',k<i))}
 function up(){const j=$('j'),r=j.getBoundingClientRect(),p=Math.min(.999,Math.max(0,-r.top/(j.offsetHeight-innerHeight))),i=Math.floor(p*S.length);
 if(i!==cur){cur=i;apply(i)}
-$('road').style.backgroundPositionX=(-scrollY*1.4)+'px';
-$('girl').classList.add('walk');clearTimeout(wt);wt=setTimeout(()=>$('girl').classList.remove('walk'),180)}
-addEventListener('scroll',up,{passive:true});apply(0);cur=0;
+$('world').style.transform=`translateX(${-p*100}%)`;$('far').style.backgroundPositionX=(-scrollY*.5)+'px';$('road').style.backgroundPositionX=(-scrollY*1.4)+'px';
+$('scoot').classList.add('walk');clearTimeout(wt);wt=setTimeout(()=>$('scoot').classList.remove('walk'),180)}
+addEventListener('scroll',up,{passive:true});up();
 const io=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.classList.add('on')),{threshold:.15});
 document.querySelectorAll('.rv').forEach(e=>io.observe(e));
 const RW=['Flutter apps','rental management systems','HRMS platforms','Node.js & .NET APIs','pixel-perfect UIs'];let ri=0,rc=0,rd=1;
@@ -263,4 +261,13 @@ new IntersectionObserver((es,o)=>es.forEach(x=>{if(!x.isIntersecting)return;o.un
 document.querySelectorAll('.tilt').forEach(c=>{c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(700px) rotateY(${x*14}deg) rotateX(${-y*14}deg) translateY(-6px)`});c.addEventListener('mouseleave',()=>c.style.transform='')});
 addEventListener('mousemove',e=>{$('glow').style.left=e.clientX+'px';$('glow').style.top=e.clientY+'px'});
 addEventListener('scroll',()=>{$('progress').style.width=scrollY/(document.body.scrollHeight-innerHeight)*100+'%'},{passive:true});
+const APPS=[
+{n:'Udyogi',b:'#3f6212',t:'#ecebc4',d:'A home-service customer app for Android with an admin web app: worker booking, ratings and reviews, and location-based service matching, with Provider state management.',g:'Flutter · Web admin · Provider'},
+{n:'HRMS',b:'#b7d894',t:'#26311a',d:'Attendance punching, leave, flight ticket requests, resignations, salary slips and salary advance, with APIs that automate expense calculation and leave encashment.',g:'Flutter · APIs · Automation'},
+{n:'GJTW',b:'#c9a24b',t:'#26311a',d:'A church community app: attendance tracking, prayer requests, follow-ups, events, matrimony, meetings and location-based features.',g:'Flutter · Community · Performance'},
+{n:'Rental Management',b:'#ecebc4',t:'#26311a',d:'A rental management app that keeps properties, tenants and payments organised in one place.',g:'Flutter · Property · Payments'},
+{n:'+ 11 more',x:1,d:'More than fifteen apps across Android and iOS in total. Ask me about the rest.',g:'Get in touch ↓'}];
+const shf=$('shelf');shf.innerHTML=APPS.map((a,i)=>`<button class="sp ${a.x?'x':''}" data-i="${i}" style="${a.b?'background:'+a.b+';--tc:'+a.t:''}">${a.n}</button>`).join('');
+function pick(i){const a=APPS[i];document.querySelectorAll('.sp').forEach((b,k)=>b.classList.toggle('on',k===i));$('dt').innerHTML=`<h3>${a.n}</h3><div><p>${a.d}</p><p class="tg">${a.g}</p></div>`}
+shf.addEventListener('click',e=>{const b=e.target.closest('.sp');if(b)pick(+b.dataset.i)});pick(0);
 </script></body></html>
